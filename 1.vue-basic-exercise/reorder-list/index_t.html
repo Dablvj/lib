@@ -6,6 +6,7 @@
     <title></title>
   </head>
   <body>
+    <script src="https://cdn.jsdelivr.net/lodash/4.10.0/lodash.min.js"></script>
     <script src="../../dist/vue.min.js"></script>
     <style>
     .danger {
@@ -18,6 +19,8 @@
     -->
     <script type="text/x-template" id="t">
       <div>
+        <button @click="add">add</button>
+        <button @click="shuffle">shuffle</button>
         <table>
           <row v-for="item in items"
             :key="item.id"
@@ -45,7 +48,7 @@
     </div>
 
     <script>
-      var  total=300;
+      var  total=10;
       items = [];
       for(var i=0;i<total;i++){
         items.push({
@@ -57,15 +60,26 @@
         el:"#el",
         template:"#t",
         data:{
+          total:total,
+          time:0,
           items:items,
           selected:null
         },
         methods:{
+          shuffle:monitor('shuffle',function(){
+            this.items = _.shuffle(this.items)
+          }),
+          add:monitor('add',function(){
+            this.items.push({
+              id:total++,
+              value:String(Math.random()).slice(0,5)
+            })
+          }),
           select:monitor('select',function(item){
             this.selected = item.id;
           }),
           remove:monitor('remove',function(item){
-            
+            this.items.splice(this.items.indexOf(item),1);
           })
         },
         components:{

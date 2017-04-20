@@ -21,7 +21,7 @@
         <table>
           <row v-for="item in items"
             :key="item.id"
-            :class="{danger :true }"
+            :class="{danger : selected == item.id }"
             :item="item"
             @select="select(item)"
             @remove="remove(item)">
@@ -58,13 +58,19 @@
         template:"#t",
         data:{
           items:items,
+          selected:null
         },
         methods:{
-
+          select:monitor('select',function(item){
+            this.selected = item.id;
+          }),
+          remove:monitor('remove',function(item){
+            
+          })
         },
         components:{
           row:{
-
+            props:['item'],
             template:"#row"
           }
         }
@@ -72,7 +78,11 @@
       function monitor(action,fn){
         return function(){
           var s = window.performance.now()
-
+          fn.apply(this,arguments);
+          Vue.nextTick(function(){
+            vm.action = action;
+            vm.time = window.performance.now() - s;
+          })
         }
       }
     </script>

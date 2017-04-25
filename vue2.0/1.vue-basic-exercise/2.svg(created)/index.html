@@ -3,6 +3,7 @@
 <head>
   <title>vue.js version</title>
   <script src="https://cdn.jsdelivr.net/stats.js/r11/stats.min.js"></script>
+  <!-- http://www.open-open.com/lib/view/open1414374727419.html提供了一个简单的信息框，帮助您监控代码的性能。 -->
   <script src="../../dist/vue.min.js"></script>
   <style>
   html, body {
@@ -31,7 +32,8 @@
   </div>
 <script type="text/javascript" charset="utf-8">
 var stats = new Stats()
-stats.setMode(0)
+stats.setMode(0)// 0: fps, 1: ms
+// Align top-right
 stats.domElement.style.position = 'absolute'
 stats.domElement.style.right = '0px'
 stats.domElement.style.top = '0px'
@@ -57,6 +59,7 @@ new Vue({
       self.model.step()
       if (self.optimized) {
         self.$forceUpdate()
+        // 迫使Vue实例重新渲染。注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。
       }
     }
   },
@@ -88,6 +91,7 @@ function createModel (count) {
 
   function step () {
     points.forEach(move)
+    // http://www.jb51.net/article/81955.htmJS中的forEach、$.each、map方法区别
   }
 
   function move (p) {

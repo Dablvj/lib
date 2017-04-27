@@ -1,2 +1,2 @@
 # vu-program
-vue
+[vue中文文档](https://cn.vuejs.org/)

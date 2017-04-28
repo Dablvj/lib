@@ -21,9 +21,12 @@
     }
 
 ####二.改变动画
-转换：对元素进行移动（translate）、缩放(scale)、转动(rotate)、倾斜(skew)或拉伸(matrix)
+转换：对元素进行移动（translate）、缩放(scale)、转动(rotate)、倾斜(sskew)或拉伸(matrix)
 
 改变起点位置 transform-origin: bottom left;
 
 所有的2D转换方法组合在一起： matrix()  旋转、缩放、移动以及倾斜元素
-matrix(scale.x ,, , scale.y , translate.x, translate.y)      
+matrix(scale.x ,, , scale.y , translate.x, translate.y)     
+matrix(cosθ,sinθ,-sinθ,cosθ,0,0) 等同于 rotate(θdeg)
+
+2d和3d动画

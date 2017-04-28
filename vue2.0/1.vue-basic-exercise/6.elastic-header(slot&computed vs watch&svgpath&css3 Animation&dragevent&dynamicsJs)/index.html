@@ -6,7 +6,9 @@
     <title>Vue.js elastic header example</title>
     <!-- Delete ".min" for console warnings in development -->
     <script src="../../dist/vue.min.js"></script>
-    <script src="http://dynamicsjs.com/lib/dynamics.js"></script>
+    <script src="./lib/dynamics.js"></script>
+    <!-- http://dynamicsjs.com/lib/dynamics.js -->
+    <!-- 你可以给任何 DOM 元素的 CSS 属性,也可以给 SVG 属性,也任何 JavaScript 对象加入动画。 -->
     <link rel="stylesheet" href="style.css">
     <!-- template for the component -->
     <script type="text/x-template" id="header-view-template">
@@ -41,6 +43,10 @@
     </div>
 
     <script>
+    // svg path指令参考
+    // http://www.cnblogs.com/netWild/archive/2010/12/07/1898792.html
+    // https://segmentfault.com/a/1190000005053782#articleHeader2
+    // http://blog.csdn.net/seacean2000/article/details/8490341
     Vue.component('draggable-header-view', {
       template: '#header-view-template',
       data: function () {
@@ -72,6 +78,7 @@
           this.dragging = true
           this.start.x = e.pageX
           this.start.y = e.pageY
+          console.log(e.pageX+' '+e.pageY);
         },
         onDrag: function (e) {
           e = e.changedTouches ? e.changedTouches[0] : e
@@ -98,7 +105,6 @@
         }
       }
     })
-
     new Vue({ el: '#app' })
     </script>
   </body>

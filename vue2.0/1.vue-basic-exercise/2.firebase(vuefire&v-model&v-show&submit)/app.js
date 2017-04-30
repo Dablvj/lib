@@ -31,6 +31,8 @@ var app = new Vue({
     validation: function () {
       return {
         name: !!this.newUser.name.trim(),
+        // !!一般用来将后面的表达式强制转换为布尔类型的数据（boolean），也就是只能是true或者false;
+        // 因为javascript是弱类型的语言（变量没有固定的数据类型）所以有时需要强制转换为相应的类型
         email: emailRE.test(this.newUser.email)
       }
     },

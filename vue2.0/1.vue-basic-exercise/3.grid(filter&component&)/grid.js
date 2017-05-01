@@ -2,10 +2,14 @@
 Vue.component('demo-grid', {
   template: '#grid-template',
   replace: true,
+  // 如果设为 true（这是默认值），模板将覆盖挂载元素，并合并挂载元素和模板根节点的 attributes。
+  // 如果设为 false 模板将覆盖挂载元素的内容，不会替换挂载元素自身。
   props: {
     data: Array,
     columns: Array,
     filterKey: String
+    // 由于html的特性是不区分大小写（比如LI和li是一样的）.
+    // 因此，html标签中要传递的值要写成短横线式的（如btn-test），以区分大小写.
   },
   data: function () {
     var sortOrders = {}
@@ -24,10 +28,16 @@ Vue.component('demo-grid', {
       var order = this.sortOrders[sortKey] || 1
       var data = this.data
       if (filterKey) {
+        //filter()方法使用指定的函数测试所有元素，并创建一个包含所有通过测试的元素的新数组。
         data = data.filter(function (row) {
           return Object.keys(row).some(function (key) {
             return String(row[key]).toLowerCase().indexOf(filterKey) > -1
           })
+          // map():返回一个新的Array，每个元素为调用func的结果
+          // filter():返回一个符合func条件的元素数组
+          // some():返回一个boolean，判断是否有元素是否符合func条件
+          // every():返回一个boolean，判断每个元素是否符合func条件
+          // forEach():没有返回值，只是针对每个元素调用func
         })
       }
       if (sortKey) {

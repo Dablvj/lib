@@ -23,7 +23,7 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for="user in users">
+        <li v-for="user in users" :key="user['.key']">
           <span>{{user.name}}</span> - <span>{{user.email}}</span>
           <button type="button" @click="removeUser(user)">X</button>
         </li>

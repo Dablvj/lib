@@ -48,6 +48,7 @@ Vue.component('demo-grid', {
         })
       }
       return data
+      console.log(data);
     }
   },
   filters: {

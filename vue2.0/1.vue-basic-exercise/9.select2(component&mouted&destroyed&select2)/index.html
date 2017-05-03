@@ -5,9 +5,9 @@
     <title>Vue.js wrapper component example (jquery plugin: select2)</title>
     <!-- Delete ".min" for console warnings in development -->
     <script src="../../dist/vue.min.js"></script>
-    <script src="https://unpkg.com/jquery"></script>
-    <script src="https://unpkg.com/select2@4.0.3"></script>
-    <link href="https://unpkg.com/select2@4.0.3/dist/css/select2.min.css" rel="stylesheet">
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/select2.js"></script>
+    <link href="./lib/select2.min.css" rel="stylesheet">
     <style>
       html, body {
         font: 13px/18px sans-serif;
@@ -18,10 +18,8 @@
     </style>
   </head>
   <body>
-
     <div id="el">
     </div>
-
     <!-- using string template here to work around HTML <option> placement restriction -->
     <script type="text/x-template" id="demo-template">
       <div>

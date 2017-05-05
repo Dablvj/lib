@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../../dist/vue.min.js"></script>
+    <style media="screen">
+      table{
+        width: 100%;
+      }
+      th,td{
+        20%;
+        text-align: center;
+      }
+      .form input{
+        width:100%;
+      }
+      button[type="button"]{
+        width: 100%;
+        background-color: #cacaf1;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo">
+      <h3>Vue demo</h3>
+      <table v-if="bookList.length">
+        <thead>
+          <tr>
+            <th>
+              序号
+            </th>
+            <th>
+              书名
+            </th>
+            <th>
+              作者
+            </th>
+            <th>
+              价格
+            </th>
+            <th>
+              操作
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in bookList">
+            <td>
+              {{ index+1 }}
+            </td>
+            <td>
+              {{ item.name }}
+            </td>
+            <td>
+              {{ item.author }}
+            </td>
+            <td>
+              {{ item.price }}
+            </td>
+            <td @click="remove(item)">
+              删除
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>添加书籍</h4>
+      <form class="form">
+        <label>书名</label>
+        <input type="text"  v-model="bName"/>
+        <br/>
+        <label>作者</label>
+        <input type="text"  v-model="bAuthor"/>
+        <br/>
+        <label>价格</label>
+        <input type="number"  v-model="bPrice"/>
+        <br/>
+        <button type="button" @click="add">添加</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      var bookList = [
+        {name:'不畏将来，不畏过去',author:'刘明',price:28}
+      ]
+      var demo = new Vue({
+        el:'#demo',
+        data:{
+          bName:'',
+          bAuthor:'',
+          bPrice:'',
+          bookList:bookList
+        },
+        methods:{
+          add:function(){
+            this.bookList.push({
+              name:this.bName,
+              author:this.bAuthor,
+              price:this.bPrice
+            })
+            this.bName = ''
+            this.bAuthor = ''
+            this.bPrice = ''
+          },
+          remove:function(value){
+            var i = this.bookList.indexOf(value)
+            if(i > -1){
+              this.bookList.splice(i,1)
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

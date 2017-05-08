@@ -51,11 +51,17 @@ export default new Router({
       path: '/test/:id(\\d+)/:title',
       name: 'test',
       component: Params,
-      alias: '/evrygo2/:id(\\d+)/:title'
+      alias: '/evrygo2/:id(\\d+)/:title',
+      beforeEnter:(to,from,next) =>{
+        console.log('我进入模板')
+        console.log(to)
+        console.log(from)
+        next({path:'/hi'})
+      }
     },
     {
       path:'/redirect/:id(\\d+)/:title',
-      redirect:'/test/:id(\\d+)/:title'
+      redirect:'/test/:id(\\d+)/:title',
     },
     {
       path: "*",

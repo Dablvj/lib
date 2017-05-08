@@ -10,7 +10,7 @@ export default {
     return {
       msg: 'Hi, I am params!'
     }
-  }
+  },
 }
 </script>
 <style scoped>

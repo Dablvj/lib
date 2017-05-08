@@ -4,15 +4,15 @@
     <p>
       导航 ：
       <router-link to="/">首页</router-link> |
-      <router-link to="/hi">Hi页面</router-link> |
-      <router-link to="/hi/hi1">Hi页面1</router-link> |
-      <router-link to="/hi/hi2">Hi页面2</router-link> |
-      <router-link :to="{name:'/hello/hi/hi1',params:{username:'evrygo'}}">Hi页面1</router-link>
+      <router-link to="/test/99/119事件">119事件</router-link> |
+      <router-link to="/redirect/100/重大发现">重大发现</router-link> |
+      <router-link to="/redirect/1002/重大发现2">重大发现2</router-link> |
+      <router-link to="/hi">三峡水库</router-link> |
+      <router-link to="/evrygo">三峡水库2</router-link>
     </p>
-    <p>{{ $route.name }}</p>
-    <router-view></router-view>
-    <router-view name="left" style="float:left;width:50%;height:100px;background-color:gray;"></router-view>
-    <router-view name="right" style="float:left;width:50%;height:100px;background-color:#eee;"></router-view>
+    <transition name="fade" mode="in-out">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -30,5 +30,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter{
+  opacity:0;
+}
+
+.fade-leave{
+  opacity:1;
+}
+.fade-enter-active{
+  transition:opacity 0.5s;
+}
+
+.fade-leave-active{
+  opacity:0;
+  transition:opacity 0.5s;
 }
 </style>

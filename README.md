@@ -1,6 +1,8 @@
 # vu-program
 [vue中文文档](https://cn.vuejs.org/)
-[Vue.js 起手式](https://juejin.im/entry/58705424ac502e006453653b)
+[Vue.js起手式](https://juejin.im/entry/58705424ac502e006453653b)
+[vue-router2中文文档](http://router.vuejs.org/zh-cn/)
+[Vuex中文文档](https://vuex.vuejs.org/zh-cn/)
 [技术胖-胜洪宇大神 WEB前端博客](http://jspang.com/author/jspang01/)
 #####vue基础
 [【第一季】Vue2.0视频教程-内部指令(共8集)](http://jspang.com/2017/02/23/vue2_01/)

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Vue.extend扩展实例构造器</h2>
+    <hr>
+    <author></author>
+    <div class="evrygo">
+      
+    </div>
+    <script type="text/javascript">
+      var authorExtend = Vue.extend({
+        template:'<p><a :href="authorUrl">{{authorName}}</a></p>',
+        data:function(){
+          return{
+            authorName:'evrygo',
+            authorUrl:'http://www.baidu.com'
+          }
+        }
+      })
+      // new authorExtend().$mount('author')
+      new authorExtend().$mount('.evrygo')
+    </script>
+  </body>
+</html>

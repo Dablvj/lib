@@ -9,6 +9,7 @@
       <router-link to="/redirect/1002/重大发现2">重大发现2</router-link> |
       <router-link to="/hi">三峡水库</router-link> |
       <router-link to="/evrygo">三峡水库2</router-link>
+      <router-link to="/count">积分器</router-link>
     </p>
     <transition name="fade" mode="in-out">
       <router-view></router-view>

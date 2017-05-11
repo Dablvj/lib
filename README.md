@@ -29,3 +29,6 @@ vue2.0 example
  vue project
 
 ├──https://github.com/Dablvj/vue-sui-demo.git / http://blog.coderfun.com/vue-sui-demo/
+
+cnpm
+export PATH=/usr/local/Cellar/node/6.3.0/bin/:$PATH

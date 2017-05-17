@@ -16,6 +16,9 @@
 [【第八季】技术胖的Vue-router视频教程](http://jspang.com/2017/04/13/vue-router/)
 [【第九季】技术胖的vuex视频教程](http://jspang.com/2017/05/03/vuex/)
 
+######vue UI
+[Element Ui](http://element.eleme.io/)
+
 ?
 [vue example collection](https://github.com/vuejs/awesome-vue#official-resources)
 [蘑菇街vuejs, vue-router, vue-cli, webpack, Es6](https://github.com/andylei18/vue-shopping)
@@ -35,3 +38,12 @@ vue2.0 example
  vue project
 
 ├──https://github.com/Dablvj/vue-sui-demo.git / http://blog.coderfun.com/vue-sui-demo/
+
+cnpm
+export PATH=/usr/local/Cellar/node/6.3.0/bin/:$PATH
+
+
+教王斌&repeat面试题：
+
+<link rel="stylesheet" type="text/css" href="aa.css">
+<>

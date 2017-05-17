@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Vue2.0实例</h2>
+    <hr>
+    <div id="app">
+      {{ num }}
+      <p>
+        <button type="button" @click="add" name="button">add</button>
+      </p>
+      <p>
+        <button type="button" @click="reduce" name="button">reduce</button>
+      </p>
+    </div>
+    <script type="text/javascript">
+      var app = new Vue({
+        el: '#app',
+        data:{
+          num: 0
+        },
+        methods:{
+          add:function(){
+            this.num++
+          }
+        }
+      })
+      app.$on('reduce',function(){
+        console.log('reduce');
+        this.num--
+      })
+    </script>
+  </body>
+</html>

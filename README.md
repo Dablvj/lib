@@ -11,6 +11,8 @@
     --index.html  文本流上传代码   
 --akiyunUpload
     --aliyun.js有官方demo配合pluUpload
+--jsonExportExcel 将json导出成excel
+
 ```      
 ### git提交流程
 参照：原菜根流程
